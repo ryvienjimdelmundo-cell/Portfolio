@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a2e;
+            color: #e94560;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #16213e !important;
+        }
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .hero-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgb(236, 83, 132);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+        }
+        .progress {
+            background-color: #16213e;
+            height: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            background-color: #e94560;
+            height: 100%;
+            width: 0;
+            border-radius: 15px;
+            transition: width 2s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #e94560;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #ff2e63;
+        }
+        .project-card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #16213e;
+            color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".progress-bar").forEach((bar) => {
+                let width = bar.getAttribute("data-width");
+                bar.style.width = width;
+                bar.innerText = width;
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="home" class="hero-section">
+        <img src="https://i.imgur.com/18ClCmF.jpeg" alt="Profile Picture">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Delmundo, Ryvien Jim D. || BSCS-C301</p>
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+    </section>
+    
+    <section id="about" class="container py-5">
+        <h2 class="text-center">About Me</h2>
+        <p class="text-center">Hi, I’m Ryvien Jim Delmundo, a 3rd-year Computer Science student at City College of Angeles. 
+            I have a deep passion for technology and creativity. I enjoy drawing, playing basketball and cycling, 
+            and have a strong interest in motors and cars. Most importantly, I love exploring the world of computers, 
+            especially web development and design. My goal is to become a skilled web developer or designer, c
+            reating visually appealing and functional digital experiences. I’m always eager to learn, improve, 
+            and take on new challenges in this ever-evolving field.</p>
+
+            <h3 class="text-center" style="color:#e94560 ;"><b>Milestones & Achievements</b></h3>
+            <p class="text-center">Achievement is to able to graduate 
+                highschool/Senior high although its on pandemic and also to make my parents proud, and riding my bike going  places ive never been.
+                the hard work to pedal to a place that ive never been on, currently im still traveling but right now im using my motorcycle.</p>
+
+            <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://i.imgur.com/vgUIVjI.jpeg" class="d-block w-100" alt="Photo 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.imgur.com/oD8bYUE.jpeg" class="d-block w-100" alt="Photo 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.imgur.com/62MYY6a.jpeg" class="d-block w-100" alt="Photo 3">
+                    </div>
+                </div>
+               
+                <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+    </section>
+
+
+    <section id="projects" class="container py-5">
+        <h2 class="text-center">Projects</h2>
+        <div class="row">
+        
+            <div class="col-md-4 mb-4">
+                <div class="card project-card">
+                    <img src="https://i.imgur.com/oHAuId5.png" class="card-img-top" alt="Project 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Intro or basic codes in html</h5>
+                        <p class="card-text">A Code of basic in html</p>
+                        <a href="file:///C:/Users/ryvien%20jim/Downloads/index.html" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card project-card">
+                    <img src="https://i.imgur.com/PaWwz9H.jpeg" class="card-img-top" alt="Project 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Learing styles on html</h5>
+                        <p class="card-text">Styles in html</p>
+                        <a href="file:///C:/Users/ryvien%20jim/Downloads/Act2.html" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card project-card">
+                    <img src="https://i.imgur.com/HfQzDrN.png" class="card-img-top" alt="Project 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Learing about CSS</h5>
+                        <p class="card-text">Using The CSS on HTML</p>
+                        <a href="file:///C:/Users/ryvien%20jim/Downloads/html-Delmundo.html" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            
+            <div class="col-md-4 mb-4">
+                <div class="card project-card">
+                    <img src="https://i.imgur.com/usrNCx2.png" class="card-img-top" alt="Project 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Using Bootstrap</h5>
+                        <p class="card-text">Making a code with Bootstrap</p>
+                        <a href="file:///C:/Users/ryvien%20jim/Downloads/index%20(1).html" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card project-card">
+                    <img src="https://i.imgur.com/fZd6e15.png" class="card-img-top" alt="Project 5">
+                    <div class="card-body">
+                        <h5 class="card-title">The Use of JavaScript</h5>
+                        <p class="card-text">Using JavaScript to perform password validation once the user submits the form. Validation rules are displayed inside the alert message.</p>
+                        <a href="file:///C:/Users/ryvien%20jim/Downloads/login.html" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="col-md-4 mb-4">
+                <div class="card project-card">
+                    <img src="C:/Users/ryvien jim/OneDrive/Pictures/Screenshots/7oop.png" class="card-img-top" alt="Project 6">
+                    <div class="card-body">
+                        <h5 class="card-title">7OOP Portfolio</h5>
+                        <p class="card-text">We created a portfolio to compile our activities.</p>
+                        <a href="https://sites.google.com/cca.edu.ph/delmundo-ryvien-jim-d/home" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            
+            <div class="col-md-4 mb-4">
+                <div class="card project-card">
+                    <img src="https://i.imgur.com/hSxsN6g.png" class="card-img-top" alt="Project 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Prototyping Our App on Figma</h5>
+                        <p class="card-text">We designed the UI for our app on Figma to ensure it's user-friendly and make adjustments before developing the actual app.</p>
+                        <a href="https://www.figma.com/proto/EwtkSpxtM472FCxTxncR4e/Log-in-UI?node-id=0-1&t=SpDTLFsw2fpj7vcI-1" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="contact" class="container py-5">
+        <h2 class="section-header">Contact Me</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+            <div id="messageSent" class="alert alert-success mt-3" style="display: none;">
+                Your message has been sent successfully!
+            </div>
+        </div>
+    
+        <div class="col-md-6">
+            <h3 style="color: #e94560;">Connect With Me</h3>
+            <a href="https://www.facebook.com/Jimdelmundo22" class="btn btn-outline-primary btn-social me-2" style="border-color:#e94560">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png" alt="Facebook" style="width: 24px; height: 24px;">
+            </a>
+            <a href="mailto:rjdelmundo23-0106@cca.edu.ph" class="btn btn-outline-primary btn-social me-2" style="border-color:#e94560">
+                <img src="https://images.icon-icons.com/2642/PNG/512/google_mail_gmail_logo_icon_159346.png" alt="Gmail" style="width: 24px; height: 24px;">
+            </a>
+        </div>
+    </section>
+    
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            document.getElementById("messageSent").style.display = "block"; 
+            this.reset(); 
+        });
+    </script>
+    
+    
+    <footer>
+        <p>&copy; 2025 || Delmundo, Ryvien Jim D. || C301</p>
+    </footer>
+</body>
+</html>
